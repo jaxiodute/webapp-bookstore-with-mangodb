@@ -1,0 +1,35 @@
+<%- include("header"); -%>
+
+
+<div class="container">
+  <input class="form-control" id="listSearch" type="text" placeholder="Type something to search list items">
+  <br>
+  <ul class="list-group" id="myList">
+      <%books.forEach(function(item){%>
+        <li class="list-group-item">
+          <h4 style="font-family:monospace;font-weight:bold">
+            <%var k= item.name%>
+            <a href="/book/<%=k%>">
+                <%=item.name%>
+            </a>
+          </h4>
+          <br>
+          <h4 style="font-family:cursive;font-size:15px">
+            <%=item.about%>
+          </h4>
+
+          </li>
+      <%})%>
+  </ul>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#listSearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
