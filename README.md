@@ -1,2 +1,4 @@
 # webapp-bookstore-with-mangodb
-The Data Will Be Stored in The mangdb and we are using mangoose here
+initialise the mangodb in your system
+the install the required nodejs packages
+then run app.js
